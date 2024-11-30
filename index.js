@@ -35,7 +35,7 @@ app.get('/tasks/edit-priority', (req, res) => {
 app.get('/tasks/edit-text', (req, res) => {
      const { taskId, text } = req.query;
      let newTasks =  tasks.filter((task) => task.taskId != taskId);
-        let myTask = tasks.find((item) => item.text == text);
+        let myTask = tasks.find((item) => item.taskId == taskId);
         newTasks.push({ taskId, text: text, priority : myTask.priority }); 
         return res.json({ tasks: newTasks });  
 
